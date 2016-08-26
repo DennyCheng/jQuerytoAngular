@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Job Salary</title>
+      <script type="text/javascript" src="/vendors/angular.min.js"></script>
+      <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
+      <script type="text/javascript" src="/scripts/client.js"></script>
+      <script type="text/javascript" src="/scripts/controllers/peopleController.js"></script>
+      <link rel="stylesheet" href="/styles/style.css"/>
+  </head>
+  <body ng-app="myApp">
+    <h1>Bed Bath and Beyonc&eacute;</h1>
+    <h2>Workers Information Portal</h2>
+    <div ng-controller="peopleController">
+
+        <form id="employeeinfo">
+        <legend>Please Insert Information</legend>
+
+        <label for="firstName">First name </label>
+        <input ng-model="person.firstName" type="text" name="firstName" id="taskContent"/>
+
+        <label for="lastName">Last name </label>
+        <input ng-model="person.lastName" type="text" name="lastName" id="taskContent"/>
+
+        <label for="workId">Woker ID </label>
+        <input ng-model="person.workId" type="text" name="workId" id="taskContent"/>
+
+        <label for="jobTitle">Job Title </label>
+        <input ng-model="person.jobTitle" type="text" name="jobTitle" id="taskContent"/>
+
+        <label for="salaryY">Yearly Salary </label>
+        <input ng-model="person.yearSalary" type="text" name="yearSalary" id="taskContent"/>
+
+        <button id="personSubmit" ng-click="savePerson()">Submit</button>
+        </form>
+    <div id="container">
+      <h2>Employee Information</h2>
+      <p>Total Salary Expenditure ${{totalSalary}}</p>
+      <div ng-repeat="people in peoples">
+        <ul>
+          <li>Name:{{people.firstName + people.lastName}}<br/>
+          ID:{{people.workId}}<br/>
+          Job Title:{{people.jobTitle}}<br/>
+          Monthly Salary:{{people.yearSalary}}</li>
+        <button id="deletPerson" ng-click="deletePerson()">Submit</button>
+        </ul>
+      </div>
+    </div>
+
+    </div>
+  </body>
+</html>
